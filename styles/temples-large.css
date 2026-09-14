@@ -1,3 +1,5 @@
-.temples-gallery{
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 768px){
+    .temples-gallery{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
