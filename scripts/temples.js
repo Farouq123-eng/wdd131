@@ -7,11 +7,8 @@ const menuButton = document.querySelector("#menuButton");
 const navMenu = document.querySelector("#navMenu");
 
 menuButton.addEventListener("click", () => {
-    if (navMenu.style.display === "flex") {
-    navMenu.style.display = "none";
-    menuButton.textContent = "☰"; // hamburger
-   } else {
-    navMenu.style.display = "flex";
-    menuButton.textContent = "✖"; // close symbol
-  }
+    const isOpen = navMenu.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    menuButton.textContent = isOpen ? "×" : "☰";
 });
