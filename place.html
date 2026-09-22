@@ -20,7 +20,13 @@
     <main class="country-index">
         <section>
             <figure>
-                <img class="country-image" src="images/gorilla1.webp" alt="Nigeria native gorilla ">
+                <img class="country-image" src="images/gorilla1.webp" 
+                srcset="
+                images/gorilla-small.webp 500w,
+                images/gorilla-medium.webp 900w,
+                images/gorilla-large.webp 1400w
+                "
+                alt="Nigeria native gorilla ">
             </figure>
         </section>
         <section>
@@ -41,9 +47,11 @@
         </section>
         <section>
             <h1 class="weather-heading">Weather</h1>
-            <figure>
-                <img class="weather-icon" src="images/partly-cloudy.svg" alt="partly cloudy">
-            </figure>
+                        <img
+                                class="weather-icon"
+                                src="images/partly-cloudy.svg"
+                                alt="Partly cloudy weather"
+                        >
             <div>
                 <ul>
                     <li id="temperature">Temperature: 27°C</li>
