@@ -1,0 +1,53 @@
+:root{
+    --primary-color: #008751;
+    --accent-color: #c8102e;
+    --background-color: #f4f1ea;
+    --text-color: #222;
+    --spacing: 1rem
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.6;
+    color:  var(--text-color);
+    background-color: var(--background-color);
+}
+header,
+footer{
+    padding: var(--spacing);
+    color: white;
+    text-align:center;
+    background-color: var(--primary-color);
+}
+
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.country-index{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+section{
+    padding: 2rem 1rem;
+}
+figure{
+    margin: 0;
+    text-align: center;
+}
+.country-image{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.weather-icon{
+    width:100px;
+    margin: 1rem auto;
+}
+footer{
+    background-color: var(--accent-color);
+}
+

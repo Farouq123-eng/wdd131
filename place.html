@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="my country">
+    <meta name="author" content="Bello Farouq">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Country</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <span id="country">Nigeria</span>
+    </header>
+    <main class="country-index">
+        <section>
+            <figure>
+                <img class="country-image" src="images/gorilla1.webp" alt="Nigeria native gorilla ">
+            </figure>
+        </section>
+        <section>
+            <h1>Data</h1>
+            <div>
+                
+                <ul>
+                    <li>Area: 923,768 km²</li>
+                    <li>Population: 244.34 million</li>
+                    <li>Capital: Abuja</li>
+                    <li>Languages: Yoruba, Igbo, Hausa</li>
+                    <li>Currency: Naira</li>
+                    <li>Time Zone: UTC+1</li>
+                    <li>Calling Code: +234</li>
+                    <li>Internet TLD: .ng</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h1 class="weather-heading">Weather</h1>
+            <figure>
+                <img class="weather-icon" src="images/partly-cloudy.svg" alt="partly cloudy">
+            </figure>
+            <div>
+                <ul>
+                    <li id="temperature">Temperature: 27°C</li>
+                    <li>Conditions: partly cloudy</li>
+                    <li id="windSpeed">Wind: 7m/s</li>
+                    <li>Wind Chill: <span id="windChill">N/A</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><span id="currentYear"></span> Bello Farouq | Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
