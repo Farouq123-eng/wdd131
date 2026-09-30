@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore temple details and filter temples by dedication date and size.">
+    <meta name="author" content="Bello Farouq">
+    <title>Filtered Temple Album</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <p class="site-title">Temple Album</p>
+        <button id="menuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">&#9776;</button>
+        <nav id="navMenu" aria-label="Main navigation">
+            <a href="filtered-temples.html" data-filter="home" aria-current="page">Home</a>
+            <a href="#templeGrid" data-filter="old">Old</a>
+            <a href="#templeGrid" data-filter="new">New</a>
+            <a href="#templeGrid" data-filter="large">Large</a>
+            <a href="#templeGrid" data-filter="small">Small</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Temple Album</h1>
+        <p id="filterStatus" class="filter-status" aria-live="polite">Showing all temples</p>
+        <section id="templeGrid" class="temples-gallery" aria-label="Temple details"></section>
+    </main>
+    <footer>
+        <p>&copy;<span id="year"></span> Bello Farouq | Lagos State, Nigeria</p>
+        <p>Last modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
