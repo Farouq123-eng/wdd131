@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Send Naija Field Guide a question or suggestion about exploring Nigeria.">
+    <meta name="author" content="Bello Farouq">
+    <meta name="theme-color" content="#075c3b">
+    <title>Contact | Naija Field Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/site.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Naija Field Guide home">
+            <span class="brand-mark" aria-hidden="true">N</span>
+            <span>Naija <strong>Field Guide</strong></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="culture.html">Culture</a>
+            <a href="explore.html">Explore</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+        <a class="nav-cta" href="references.html">References <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+        <section class="interior-heading" aria-labelledby="page-title">
+            <div class="interior-heading-inner">
+                <p class="section-kicker"><span>04</span><span>Questions &amp; suggestions</span></p>
+                <h1 id="page-title">Continue the conversation.</h1>
+                <p>Have a question about a place or a suggestion for the guide? Send a note below.</p>
+            </div>
+        </section>
+
+        <section class="contact-layout section-wrap" aria-labelledby="form-title">
+            <div class="contact-intro">
+                <p class="section-kicker"><span>Get in touch</span></p>
+                <h2 id="form-title">What would you like to know?</h2>
+                <p>Your question can help shape the next field note.</p>
+                <p class="static-form-note">This is a static class project. Your message is shown in this browser session, but it is not emailed or sent to a server.</p>
+            </div>
+            <form id="contact-form" class="contact-form" action="message.html" method="get">
+                <label for="name">Your name <span>Required</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required maxlength="80">
+
+                <label for="email">Email address <span>Required</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required maxlength="120">
+
+                <label for="topic">What is this about? <span>Required</span></label>
+                <select id="topic" name="topic" required>
+                    <option value="" disabled selected>Choose a topic</option>
+                    <option value="Places to explore">Places to explore</option>
+                    <option value="Culture and traditions">Culture and traditions</option>
+                    <option value="Travel planning">Travel planning</option>
+                    <option value="A suggestion for the guide">A suggestion for the guide</option>
+                </select>
+
+                <label for="message">Your question or suggestion <span>Required</span></label>
+                <textarea id="message" name="message" rows="6" required minlength="10" maxlength="1200"></textarea>
+
+                <button class="submit-button" type="submit">Review your message <span aria-hidden="true">→</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">N</span><span>Naija <strong>Field Guide</strong></span></a>
+        <p>A starting point for seeing Nigeria with fresh eyes.</p>
+        <div class="footer-bottom"><span>© <span id="current-year"></span> Bello Farouq</span><div class="footer-links"><a href="references.html">References</a><a href="siteplan.html">Site plan</a></div></div>
+    </footer>
+</body>
+</html>

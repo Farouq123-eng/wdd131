@@ -25,26 +25,17 @@ updateLagosClock();
 window.setInterval(updateLagosClock, 30_000);
 
 const weatherDescription = document.querySelector("#weather-description");
-const weatherSymbols = new Map([
-  [0, ["Clear sky", "☀"]],
-  [1, ["Mainly clear", "◒"]],
-  [2, ["Partly cloudy", "◐"]],
-  [3, ["Overcast", "☁"]],
-  [45, ["Foggy", "≋"]],
-  [48, ["Rime fog", "≋"]],
-  [51, ["Light drizzle", "☂"]],
-  [53, ["Drizzle", "☂"]],
-  [55, ["Heavy drizzle", "☂"]],
-  [61, ["Light rain", "☂"]],
-  [63, ["Rain", "☂"]],
-  [65, ["Heavy rain", "☂"]],
-  [80, ["Rain showers", "☂"]],
-  [81, ["Showers", "☂"]],
-  [82, ["Heavy showers", "☂"]],
-  [95, ["Thunderstorm", "⚡"]],
-  [96, ["Thunderstorm with hail", "⚡"]],
-  [99, ["Heavy thunderstorm", "⚡"]]
-]);
+const weatherConditions = [
+  { codes: [0], description: "Clear sky", icon: "☀" },
+  { codes: [1], description: "Mainly clear", icon: "◒" },
+  { codes: [2], description: "Partly cloudy", icon: "◐" },
+  { codes: [3], description: "Overcast", icon: "☁" },
+  { codes: [45, 48], description: "Foggy", icon: "≋" },
+  { codes: [51, 53, 55], description: "Drizzle", icon: "☂" },
+  { codes: [61, 63, 65], description: "Rain", icon: "☂" },
+  { codes: [80, 81, 82], description: "Rain showers", icon: "☂" },
+  { codes: [95, 96, 99], description: "Thunderstorm", icon: "⚡" }
+];
 
 async function loadLagosWeather() {
   if (!weatherDescription) return;
@@ -56,13 +47,16 @@ async function loadLagosWeather() {
     if (!response.ok) throw new Error("Weather request failed");
 
     const { current, current_units: units } = await response.json();
-    const [description, icon] = weatherSymbols.get(current.weather_code) || ["Current conditions", "☁"];
+    const condition = weatherConditions.find((item) => item.codes.includes(current.weather_code)) || {
+      description: "Current conditions",
+      icon: "☁"
+    };
     const temperature = document.querySelector("#weather-temp");
     const weatherIcon = document.querySelector("#weather-icon");
     const weatherDetail = document.querySelector("#weather-detail");
     if (temperature) temperature.textContent = `${Math.round(current.temperature_2m)}${units.temperature_2m}`;
-    if (weatherIcon) weatherIcon.textContent = icon;
-    weatherDescription.textContent = description;
+    if (weatherIcon) weatherIcon.textContent = condition.icon;
+    weatherDescription.textContent = condition.description;
     if (weatherDetail) weatherDetail.textContent = `Feels like ${Math.round(current.apparent_temperature)}° · Humidity ${current.relative_humidity_2m}% · Wind ${Math.round(current.wind_speed_10m)} ${units.wind_speed_10m}`;
   } catch {
     weatherDescription.textContent = "Live weather is temporarily unavailable.";
@@ -87,7 +81,7 @@ if (lightbox) {
   const lightboxImage = lightbox.querySelector("img");
   const lightboxCaption = lightbox.querySelector("p");
 
-  document.querySelectorAll(".gallery-open").forEach((button) => {
+  [...document.querySelectorAll(".gallery-open")].forEach((button) => {
     button.addEventListener("click", () => {
       const image = button.querySelector("img");
       lightboxImage.src = image.src;
@@ -101,4 +95,34 @@ if (lightbox) {
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) lightbox.close();
   });
+}
+
+const contactForm = document.querySelector("#contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const inquiry = Object.fromEntries(new FormData(contactForm).entries());
+    sessionStorage.setItem("fieldGuideInquiry", JSON.stringify(inquiry));
+    window.location.href = "message.html";
+  });
+}
+
+const confirmationMessage = document.querySelector("#confirmation-message");
+
+if (confirmationMessage) {
+  const inquiryData = sessionStorage.getItem("fieldGuideInquiry");
+  const inquiryDetails = document.querySelector("#inquiry-details");
+
+  if (inquiryData) {
+    const inquiry = JSON.parse(inquiryData);
+    document.querySelector("#submitted-name").textContent = inquiry.name;
+    document.querySelector("#submitted-email").textContent = inquiry.email;
+    document.querySelector("#submitted-topic").textContent = inquiry.topic;
+    document.querySelector("#submitted-message").textContent = inquiry.message;
+    sessionStorage.removeItem("fieldGuideInquiry");
+  } else {
+    confirmationMessage.textContent = "There is no recent message to display. You can send a question or suggestion from the contact page.";
+    if (inquiryDetails) inquiryDetails.hidden = true;
+  }
 }
