@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share your experience with a product in a quick review.">
+    <meta name="author" content="Bello Farouq">
+    <title>Product Review | Bello Farouq</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form action="review.html" method="get">
+            <label class="field-label" for="product">Product Name <span class="required-note">Required</span></label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+
+            <fieldset class="rating-field">
+                <legend>Overall Rating <span class="required-note">Required</span></legend>
+                <div class="rating-options">
+                    <label for="rating-1"><input id="rating-1" name="rating" type="radio" value="1" required><span aria-hidden="true">☆</span><span class="visually-hidden">1 star</span></label>
+                    <label for="rating-2"><input id="rating-2" name="rating" type="radio" value="2" required><span aria-hidden="true">☆</span><span class="visually-hidden">2 stars</span></label>
+                    <label for="rating-3"><input id="rating-3" name="rating" type="radio" value="3" required><span aria-hidden="true">☆</span><span class="visually-hidden">3 stars</span></label>
+                    <label for="rating-4"><input id="rating-4" name="rating" type="radio" value="4" required><span aria-hidden="true">☆</span><span class="visually-hidden">4 stars</span></label>
+                    <label for="rating-5"><input id="rating-5" name="rating" type="radio" value="5" required><span aria-hidden="true">☆</span><span class="visually-hidden">5 stars</span></label>
+                </div>
+            </fieldset>
+
+            <label class="field-label" for="install-date">Date of Installation <span class="required-note">Required</span></label>
+            <input id="install-date" name="install-date" type="date" required>
+
+            <fieldset class="features-field">
+                <legend>Useful Features <span class="optional-note">Select all that apply</span></legend>
+                <label class="check-option" for="feature-durability"><input id="feature-durability" name="features" type="checkbox" value="Durability">Durability</label>
+                <label class="check-option" for="feature-ease"><input id="feature-ease" name="features" type="checkbox" value="Ease of use">Ease of use</label>
+                <label class="check-option" for="feature-performance"><input id="feature-performance" name="features" type="checkbox" value="Performance">Performance</label>
+                <label class="check-option" for="feature-design"><input id="feature-design" name="features" type="checkbox" value="Design">Design</label>
+            </fieldset>
+
+            <label class="field-label" for="review">Written Review <span class="optional-note">Optional</span></label>
+            <textarea id="review" name="review" rows="5"></textarea>
+
+            <label class="field-label" for="user-name">Your Name <span class="optional-note">Optional</span></label>
+            <input id="user-name" name="user-name" type="text" autocomplete="name">
+
+            <input class="submit-button" type="submit" value="Submit Review">
+        </form>
+    </main>
+    <footer>
+        <p><span id="currentyear"></span>
+        BELLO FAROUQ | LAGOS STATE, NIGERIA</p>
+        <p id="LastModified"></p>
+    </footer>
+</body>
+</html>

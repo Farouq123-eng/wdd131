@@ -1,0 +1,240 @@
+:root {
+	--ink: #172d3b;
+	--teal: #176b68;
+	--teal-dark: #10504e;
+	--gold: #e9b949;
+	--paper: #f2f5f2;
+	--line: #c8d5d1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(135deg, #f2f5f2, #e5eeeb);
+	color: var(--ink);
+	font-family: "Nunito", sans-serif;
+	line-height: 1.55;
+}
+
+header,
+footer {
+	background-color: var(--ink);
+	color: #fff;
+	text-align: center;
+}
+
+header {
+	padding: 1.5rem 1rem;
+	border-bottom: 5px solid var(--gold);
+}
+
+h1,
+h2 {
+	font-family: "DM Serif Display", Georgia, serif;
+	font-weight: 400;
+}
+
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+main {
+	width: min(100% - 2rem, 42rem);
+	margin: 2rem auto;
+}
+
+form,
+.confirmation {
+	padding: clamp(1.25rem, 4vw, 2.5rem);
+	background-color: #fff;
+	border: 1px solid var(--line);
+	border-top: 6px solid var(--teal);
+	box-shadow: 0 12px 28px rgb(23 45 59 / 10%);
+}
+
+.field-label,
+fieldset legend {
+	display: block;
+	margin-bottom: 0.45rem;
+	font-weight: 700;
+}
+
+.field-label {
+	margin-top: 1.2rem;
+}
+
+.required-note,
+.optional-note {
+	margin-left: 0.35rem;
+	color: #586a70;
+	font-size: 0.78rem;
+	font-weight: 600;
+}
+
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+	width: 100%;
+	min-height: 2.8rem;
+	padding: 0.65rem 0.75rem;
+	border: 1px solid #849a98;
+	border-radius: 3px;
+	background-color: #fff;
+	color: var(--ink);
+}
+
+textarea {
+	resize: vertical;
+}
+
+fieldset {
+	min-width: 0;
+	margin: 1.35rem 0 0;
+	padding: 0;
+	border: 0;
+}
+
+fieldset legend {
+	width: 100%;
+	padding: 0;
+}
+
+.rating-options {
+	display: flex;
+	gap: clamp(0.65rem, 4vw, 1.5rem);
+	align-items: center;
+}
+
+.rating-options label {
+	display: grid;
+	justify-items: center;
+	gap: 0.1rem;
+	color: #805b00;
+	cursor: pointer;
+	font-size: 2rem;
+	line-height: 1;
+}
+
+.rating-options input {
+	width: 1.1rem;
+	height: 1.1rem;
+	accent-color: var(--teal);
+}
+
+.features-field {
+	display: grid;
+	gap: 0.45rem;
+}
+
+.features-field legend {
+	margin-bottom: 0.5rem;
+}
+
+.check-option {
+	display: flex;
+	width: fit-content;
+	gap: 0.55rem;
+	align-items: center;
+	cursor: pointer;
+}
+
+.check-option input {
+	width: 1.05rem;
+	height: 1.05rem;
+	accent-color: var(--teal);
+}
+
+.submit-button {
+	width: 100%;
+	min-height: 3rem;
+	margin-top: 1.6rem;
+	border: 0;
+	border-radius: 3px;
+	background-color: var(--teal);
+	color: white;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.submit-button:hover,
+.submit-button:focus-visible {
+	background-color: var(--teal-dark);
+}
+
+:focus-visible {
+	outline: 3px solid var(--gold);
+	outline-offset: 3px;
+}
+
+.confirmation h2 {
+	margin-top: 0;
+	color: var(--teal-dark);
+}
+
+.confirmation dl {
+	display: grid;
+	grid-template-columns: minmax(8rem, 0.7fr) 1.3fr;
+	gap: 0.6rem 1rem;
+	margin: 1.5rem 0 0;
+}
+
+.confirmation dl[hidden] {
+	display: none;
+}
+
+.confirmation dt {
+	font-weight: 700;
+}
+
+.confirmation dd {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.back-link {
+	display: inline-block;
+	margin-top: 1.5rem;
+	color: var(--teal-dark);
+	font-weight: 700;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+footer {
+	padding: 1rem;
+}
+
+footer p {
+	margin: 0.25rem;
+}
+
+@media (max-width: 480px) {
+	.confirmation dl {
+		grid-template-columns: 1fr;
+		gap: 0.15rem;
+	}
+
+	.confirmation dd {
+		margin-bottom: 0.65rem;
+	}
+}

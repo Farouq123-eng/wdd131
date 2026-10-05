@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmation of your product review.">
+    <meta name="author" content="Bello Farouq">
+    <title>Review Submitted | Bello Farouq</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Review Received</h1>
+    </header>
+    <main>
+        <section class="confirmation" aria-live="polite">
+            <h2>Thank you for your feedback</h2>
+            <p id="confirmation-message">Your review has been recorded.</p>
+            <p>Reviews completed: <strong id="review-count">0</strong></p>
+            <dl id="review-summary">
+                <dt>Product</dt><dd id="review-product"></dd>
+                <dt>Rating</dt><dd id="review-rating"></dd>
+                <dt>Installation date</dt><dd id="review-install-date"></dd>
+                <dt>Useful features</dt><dd id="review-features"></dd>
+                <dt>Written review</dt><dd id="review-text"></dd>
+                <dt>Name</dt><dd id="review-name"></dd>
+            </dl>
+            <a class="back-link" href="form.html">Submit another review</a>
+        </section>
+    </main>
+    <footer>
+        <p><span id="currentyear"></span>
+        BELLO FAROUQ | LAGOS STATE, NIGERIA</p>
+        <p id="LastModified"></p>
+    </footer>
+</body>
+</html>
