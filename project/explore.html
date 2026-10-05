@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Nigerian landmarks, wildlife, and practical information for visitors.">
+    <meta name="author" content="Bello Farouq">
+    <meta name="theme-color" content="#075c3b">
+    <title>Explore | Naija Field Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/site.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Naija Field Guide home">
+            <span class="brand-mark" aria-hidden="true">N</span>
+            <span>Naija <strong>Field Guide</strong></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="culture.html">Culture</a>
+            <a href="explore.html" aria-current="page">Explore</a>
+        </nav>
+        <a class="nav-cta" href="#travel-notes">Plan a visit <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+        <section class="interior-heading" aria-labelledby="page-title">
+            <div class="interior-heading-inner">
+                <p class="section-kicker"><span>03</span><span>Places &amp; practical notes</span></p>
+                <h1 id="page-title">Take the scenic route.</h1>
+                <p>From busy city squares to open landscapes, every direction offers a different Nigeria.</p>
+            </div>
+        </section>
+
+        <section class="explore-section section-wrap" aria-labelledby="gallery-title">
+            <div class="explore-heading">
+                <div>
+                    <div class="section-kicker"><span>01</span><span>Field notes</span></div>
+                    <h2 id="gallery-title">A few places to begin.</h2>
+                </div>
+                <p>Open a photograph for a closer look. Image sources and licensing details are linked with each image.</p>
+            </div>
+            <div class="gallery" aria-label="Places to explore in Nigeria">
+                <figure class="gallery-item gallery-large">
+                    <button class="gallery-open" type="button" aria-label="View Tinubu Square in Lagos">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Tinubu_square.jpg" alt="Historic Tinubu Square in Lagos, framed by city buildings" loading="lazy">
+                        <span class="image-expand" aria-hidden="true">↗</span>
+                    </button>
+                    <figcaption><span>Lagos State</span><strong>Tinubu Square</strong><a href="https://commons.wikimedia.org/wiki/File:Tinubu_square.jpg" target="_blank" rel="noreferrer">Image source ↗</a></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <button class="gallery-open" type="button" aria-label="View Zuma Rock">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Zuma_Rock.jpg" alt="The broad rock face of Zuma Rock rising above the landscape" loading="lazy">
+                        <span class="image-expand" aria-hidden="true">↗</span>
+                    </button>
+                    <figcaption><span>Niger State</span><strong>Zuma Rock</strong><a href="https://commons.wikimedia.org/wiki/File:Zuma_Rock.jpg" target="_blank" rel="noreferrer">Image source ↗</a></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <button class="gallery-open" type="button" aria-label="View Yankari Game Reserve wildlife">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/A_welcoming_baboon_with_its_kid_at_Yankari_Game_Reserve%2C_Bauchi%2C_Nigeria.jpg" alt="A baboon and its young in Yankari Game Reserve" loading="lazy">
+                        <span class="image-expand" aria-hidden="true">↗</span>
+                    </button>
+                    <figcaption><span>Bauchi State</span><strong>Yankari Reserve</strong><a href="https://commons.wikimedia.org/wiki/File:A_welcoming_baboon_with_its_kid_at_Yankari_Game_Reserve,_Bauchi,_Nigeria.jpg" target="_blank" rel="noreferrer">Image source ↗</a></figcaption>
+                </figure>
+                <figure class="gallery-item gallery-wide">
+                    <button class="gallery-open" type="button" aria-label="View the orisha statues in Lagos">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Stutues_of_orishas_in_Tinubu_square%2C_Lagos.jpg" alt="Colorful statues representing orishas at Tinubu Square in Lagos" loading="lazy">
+                        <span class="image-expand" aria-hidden="true">↗</span>
+                    </button>
+                    <figcaption><span>Lagos Island</span><strong>Stories in sculpture</strong><a href="https://commons.wikimedia.org/wiki/File:Stutues_of_orishas_in_Tinubu_square,_Lagos.jpg" target="_blank" rel="noreferrer">Image source ↗</a></figcaption>
+                </figure>
+            </div>
+            <p class="gallery-hint">Select a photograph to see it in full.</p>
+        </section>
+
+        <section class="travel-notes" id="travel-notes" aria-labelledby="travel-title">
+            <div class="section-wrap">
+                <div class="section-kicker"><span>02</span><span>Before you go</span></div>
+                <h2 id="travel-title">A few useful bearings.</h2>
+                <div class="travel-grid">
+                    <article><span>01 / Money</span><h3>Nigerian naira</h3><p>The naira (₦) is the national currency. Confirm current rates and payment options before traveling.</p></article>
+                    <article><span>02 / Getting around</span><h3>Plan by region</h3><p>Distances can be large, and local conditions vary. Check current transport advice and routes for each destination.</p></article>
+                    <article><span>03 / Weather</span><h3>Pack for the season</h3><p>Nigeria's climate varies from humid coastal areas to drier northern regions. Check a local forecast close to departure.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="visitor-band" aria-label="Visitor statistics">
+            <div class="visitor-inner">
+                <span class="visitor-count" id="visitor-count">0</span>
+                <p><strong>visits from this browser</strong><br><span>Thanks for exploring with us.</span></p>
+                <a href="index.html#home" class="back-top">Back to home <span aria-hidden="true">↑</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">N</span><span>Naija <strong>Field Guide</strong></span></a>
+        <p>A starting point for seeing Nigeria with fresh eyes.</p>
+        <div class="footer-bottom"><span>© <span id="current-year"></span> Bello Farouq</span><a href="siteplan.html">View the site plan</a></div>
+    </footer>
+
+    <dialog class="lightbox" aria-label="Expanded gallery image">
+        <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+        <img src="" alt="">
+        <p></p>
+    </dialog>
+</body>
+</html>
